@@ -22,7 +22,11 @@ function getMyPasswordOptions(){
     alert("Yo! That's waaaaay to long for a password. Password length must be no more than 128 characters.")
   } console.log(length)
 
+ // confirm user input on uppercase
 
+ var confirmUpperCase = (confirm("Would you like to add uppercase to your password?"));
+ console.log(confirmUpperCase)
+ 
 }
 
 function generatePassword() {
