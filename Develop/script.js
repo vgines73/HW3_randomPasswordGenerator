@@ -11,7 +11,13 @@ function getMyPasswordOptions(){
   // make sure password length is not a letter
   if (isNaN(length) === true) {
     alert("Password length must be a number.");
-  } console.log(length)
+  } //console.log(length)
+  
+  // make sure password length is at least 8 characters long; no more than 128 characters
+  if (length < 8 === true) {
+    alert("Yo! That's too short! Password length must be at least 8 characters.");
+    console.log (length)
+  }
 
 
 
