@@ -25,8 +25,16 @@ function getMyPasswordOptions(){
  // confirm user input on uppercase
 
  var confirmUpperCase = (confirm("Would you like to add uppercase to your password?"));
- console.log(confirmUpperCase)
- 
+ //console.log(confirmUpperCase)
+ if (confirmUpperCase) {
+   alert(confirmUpperCase);
+   console.log(confirmUpperCase)
+ } else {
+   prompt("That's on you!");
+   console.log(confirmUpperCase)
+ }
+
+
 }
 
 function generatePassword() {
