@@ -6,7 +6,12 @@ function getMyPasswordOptions(){
   // get user input of length of password
   // make sure length is number; not string
   var length = parseInt(prompt("Length of password?"));
-  console.log(typeof length);
+  // console.log(typeof length);
+  
+  // make sure password length is not a letter
+  if (isNaN(length) === true) {
+    alert("Password length must be a number.");
+  } console.log(length)
 
 
 
