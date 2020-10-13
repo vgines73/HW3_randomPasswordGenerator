@@ -1,89 +1,105 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-function getMyPasswordOptions(){
+function getMyPasswordOptions() {
 
   // get user input of length of password
   // make sure length is a number; not a string
   var length = parseInt(prompt("Length of password?"));
   console.log(length);
-  
+
   // make sure password length is not a letter
   if (isNaN(length) === true) {
     alert("Password length must be a number.");
-  } 
+  }
 
-    
+
   // make sure password length is at least 8 characters long; no more than 128 characters
   if (length < 8 === true) {
     alert("Yo! That's too short! Password length must be at least 8 characters.");
     //console.log (length)
-  } 
-  
+  }
+
   if (length > 128 === true) {
     alert("Yo! That's waaaaay to long for a password. Password length must be no more than 128 characters.")
     //console.log(length)
   }
-  
-  if(isNaN(length) || length<8 || length>128) {
+
+  if (isNaN(length) || length < 8 || length > 128) {
     return
   }
- // confirm user input on uppercase
+  // confirm user input on uppercase
 
- var confirmUpperCase = (confirm("Would you like to add uppercase to your password?"));
- //console.log(confirmUpperCase)
- if (confirmUpperCase) {
-   alert(confirmUpperCase);
-   console.log(confirmUpperCase)
- } else {
-   alert("That's on you's!");
-   console.log(confirmUpperCase)
- }
+  var confirmUpperCase = (confirm("Would you like to add uppercase to your password?"));
+  //console.log(confirmUpperCase)
+  if (confirmUpperCase) {
+    alert(confirmUpperCase);
+    console.log(confirmUpperCase)
+  } else {
+    alert("That's on you's!");
+    console.log(confirmUpperCase)
+  }
 
- var confirmLowerCase = (confirm("Would you like to add lowercase to your password?"))
- //console.log(confirmLowerCase);
- if (confirmLowerCase) {
-   alert(confirmLowerCase);
-   console.log(confirmLowerCase)
- } else {
-   alert("That's on you's!");
-   console.log(confirmLowerCase)
- }
+  var confirmLowerCase = (confirm("Would you like to add lowercase to your password?"))
+  //console.log(confirmLowerCase);
+  if (confirmLowerCase) {
+    alert(confirmLowerCase);
+    console.log(confirmLowerCase)
+  } else {
+    alert("That's on you's!");
+    console.log(confirmLowerCase)
+  }
 
- // confirm numeric
- var confirmNumeric = (confirm("Would you like to add numbers to your password?"))
- //console.log(confirmNumeric)
- if (confirmNumeric) {
-   alert(confirmNumeric);
-   console.log(confirmNumeric)
- } else {
-   alert("That's on you's!");
-   console.log(confirmNumeric)
- }
- 
- // confirm symbols
+  // confirm numeric
+  var confirmNumeric = (confirm("Would you like to add numbers to your password?"))
+  //console.log(confirmNumeric)
+  if (confirmNumeric) {
+    alert(confirmNumeric);
+    console.log(confirmNumeric)
+  } else {
+    alert("That's on you's!");
+    console.log(confirmNumeric)
+  }
 
- var confirmSymbols = (confirm("Would you like to add symbols to your password?"));
- //console.log(confirmSymbols)
- if (confirmSymbols) {
-   alert(confirmSymbols);
-   console.log(confirmSymbols)
- } else {
-   alert("That's on you's!");
-   console.log(confirmSymbols)
- }
+  // confirm symbols
+
+  var confirmSymbols = (confirm("Would you like to add symbols to your password?"));
+  //console.log(confirmSymbols)
+  if (confirmSymbols) {
+    alert(confirmSymbols);
+    console.log(confirmSymbols)
+  } else {
+    alert("That's on you's!");
+    console.log(confirmSymbols)
+  }
+
+
+// confirm at least one character
+var options = [confirmUpperCase, confirmLowerCase, confirmNumeric, confirmSymbols]
+
+  if (options[0] || options[1] || options[2] || options[3]) {
+    alert("You picked at least one option");
+    console.log(options)
+  } else {
+    alert("You need to pick at least one of the 4 options for your password.");
+    return;
 }
 
+}
+
+
 function generatePassword() {
-  getMyPasswordOptions() 
-  
+  getMyPasswordOptions()
+
+
+
 }
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  
+
 
   passwordText.value = password;
 
