@@ -34,7 +34,8 @@ function getMyPasswordOptions(){
    console.log(confirmUpperCase)
  }
 
-
+ var confirmLowerCase = (confirm("Would you like to add lowercase to your password?"))
+ console.log(confirmLowerCase)
 }
 
 function generatePassword() {
