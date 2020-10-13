@@ -46,7 +46,15 @@ function getMyPasswordOptions(){
 
  // confirm numeric
  var confirmNumeric = (confirm("Would you like to add numbers to your password?"))
- console.log(confirmNumeric)
+ //console.log(confirmNumeric)
+ if (confirmNumeric) {
+   alert(confirmNumeric);
+   console.log(confirmNumeric)
+ } else {
+   prompt("That's on you's!");
+   console.log(confirmNumeric)
+ }
+ 
  // confirm symbols
 
  var confirmSymbols = (confirm("Would you like to add symbols to your password?"));
