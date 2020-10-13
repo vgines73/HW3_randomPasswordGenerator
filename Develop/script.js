@@ -43,6 +43,11 @@ function getMyPasswordOptions(){
    prompt("That's on you's!");
    console.log(confirmLowerCase)
  }
+
+ // confirm symbols
+
+ var confirmSymbols = (confirm("Would you like to add symbols to your password?"));
+ console.log(confirmSymbols)
 }
 
 function generatePassword() {
