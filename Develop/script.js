@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 function getMyPasswordOptions(){
 
   // get user input of length of password
-  // make sure length is number; not string
+  // make sure length is a number; not a string
   var length = parseInt(prompt("Length of password?"));
   // console.log(typeof length);
   
@@ -44,16 +44,19 @@ function getMyPasswordOptions(){
    console.log(confirmLowerCase)
  }
 
+ // confirm numeric
+ var confirmNumeric = (confirm("Would you like to add numbers to your password?"))
+ console.log(confirmNumeric)
  // confirm symbols
 
  var confirmSymbols = (confirm("Would you like to add symbols to your password?"));
  //console.log(confirmSymbols)
  if (confirmSymbols) {
    alert(confirmSymbols);
-   console.log(confirmSymbols)
+   //k console.log(confirmSymbols)
  } else {
    prompt("That's on you's!");
-   console.log(confirmSymbols)
+   //k console.log(confirmSymbols)
  }
 }
 
@@ -65,6 +68,7 @@ function generatePassword() {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  
 
   passwordText.value = password;
 
