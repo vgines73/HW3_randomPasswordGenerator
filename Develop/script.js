@@ -47,7 +47,14 @@ function getMyPasswordOptions(){
  // confirm symbols
 
  var confirmSymbols = (confirm("Would you like to add symbols to your password?"));
- console.log(confirmSymbols)
+ //console.log(confirmSymbols)
+ if (confirmSymbols) {
+   alert(confirmSymbols);
+   console.log(confirmSymbols)
+ } else {
+   prompt("That's on you's!");
+   console.log(confirmSymbols)
+ }
 }
 
 function generatePassword() {
