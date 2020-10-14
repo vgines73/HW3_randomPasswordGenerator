@@ -108,22 +108,28 @@ function getMyPasswordOptions() {
 
   // if user picks 2 options
   if (options[0] && options[1]) {
-    console.log(abcCaps, abc)
+    //console.log(abcCaps, abc)
+    userpicks = abcCaps.abc
   }
   if (options[0] && options[2]) {
-    console.log(abcCaps, numbers)
+    //console.log(abcCaps, numbers)
+    userpicks = abcCaps.numbers
   }
   if (options[0] && options[3]) {
-    console.log(abcCaps, symbols)
+    //console.log(abcCaps, symbols)
+    userpicks = abcCaps.symbols
   }
   if (options[1] && options[2]) {
-    console.log(abc, numbers)
+    //console.log(abc, numbers)
+    userpicks = abc.numbers
   }
   if (options[1] && options[3]) {
-    console.log(abc, symbols)
+    //console.log(abc, symbols)
+    userpicks = abc.symbols
   }
   if (options[2] && options[3]) {
-    console.log(numbers, symbols)
+    //console.log(numbers, symbols)
+    userpicks = numbers.symbols
   }
 
   // if user picks 1 option
