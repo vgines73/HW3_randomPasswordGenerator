@@ -1,10 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"];
 var abcCaps = ["A", "B", "C", "D", "E", "F", "G","H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-
+;
 function getMyPasswordOptions() {
 
   // get user input of length of password
@@ -88,7 +88,30 @@ function getMyPasswordOptions() {
     alert("You need to pick at least one of the 4 options for your password.");
     return;
   }
+  // if user picks all 4 options
+  if (options[0] && options[1] && options[2] && options[3]) {
+    console.log(abcCaps, abc, numbers, symbols)
+  }
+  // if user picks 3 options
+  if (options[0] && options[1] && options[2]) {
+    console.log(abcCaps, abc, numbers)
+  }
+  if (options[0] && options[1] && options[3]) {
+    console.log(abcCaps, abc, symbols)
+  }
+  if (options[1] && options[2] && options[3]) {
+    console.log(abc, numbers, symbols)
+  }
+  if (options[2] && options[0] && options[3]) {
+    console.log(numbers, abcCaps, symbols)
+  }
 
+  // if user picks 2 options
+  if (options[0] && options[1]) {
+    console.log(abcCaps, abc)
+  }
+
+  // if user picks 1 option
 }
 
 
@@ -97,7 +120,10 @@ function getMyPasswordOptions() {
 
 function generatePassword() {
   getMyPasswordOptions()
-
+  //for (let i = 0; i < array.length; i++) {
+    
+    
+  //}
 
 
 }
