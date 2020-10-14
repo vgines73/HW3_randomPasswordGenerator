@@ -128,16 +128,20 @@ function getMyPasswordOptions() {
 
   // if user picks 1 option
   if (options[0]) {
-    console.log(abcCaps)
+    //console.log(abcCaps)
+    userpicks = abcCaps
   }
   if (options[1]) {
-    console.log(abc)
+    //console.log(abc)
+    userpicks = abc
   }
   if (options[2]) {
-    console.log(numbers)
+    //console.log(numbers)
+    userpicks = numbers
   }
   if (options[3]) {
-    console.log(symbols)
+    //console.log(symbols)
+    userpicks = symbols;
   }
 
 
