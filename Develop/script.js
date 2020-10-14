@@ -4,7 +4,7 @@ var abcCaps = ["A", "B", "C", "D", "E", "F", "G","H", "I", "J", "K", "L", "M", "
 var abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-;
+var userpicks;
 function getMyPasswordOptions() {
 
   // get user input of length of password
@@ -110,8 +110,37 @@ function getMyPasswordOptions() {
   if (options[0] && options[1]) {
     console.log(abcCaps, abc)
   }
+  if (options[0] && options[2]) {
+    console.log(abcCaps, numbers)
+  }
+  if (options[0] && options[3]) {
+    console.log(abcCaps, symbols)
+  }
+  if (options[1] && options[2]) {
+    console.log(abc, numbers)
+  }
+  if (options[1] && options[3]) {
+    console.log(abc, symbols)
+  }
+  if (options[2] && options[3]) {
+    console.log(numbers, symbols)
+  }
 
   // if user picks 1 option
+  if (options[0]) {
+    console.log(abcCaps)
+  }
+  if (options[1]) {
+    console.log(abc)
+  }
+  if (options[2]) {
+    console.log(numbers)
+  }
+  if (options[3]) {
+    console.log(symbols)
+  }
+
+
 }
 
 
