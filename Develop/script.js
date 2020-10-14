@@ -1,5 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"];
+var abcCaps = ["A", "B", "C", "D", "E", "F", "G","H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+var symbols = [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", ']', "^", '_', "`", "{", "|", "}", "~"]
 
 function getMyPasswordOptions() {
 
@@ -30,7 +34,7 @@ function getMyPasswordOptions() {
   }
   // confirm user input on uppercase
 
-  var confirmUpperCase = (confirm("Would you like to add uppercase to your password?"));
+  var confirmUpperCase = confirm("Would you like to add uppercase to your password?");
   //console.log(confirmUpperCase)
   if (confirmUpperCase) {
     alert(confirmUpperCase);
@@ -40,7 +44,7 @@ function getMyPasswordOptions() {
     console.log(confirmUpperCase)
   }
 
-  var confirmLowerCase = (confirm("Would you like to add lowercase to your password?"))
+  var confirmLowerCase = confirm("Would you like to add lowercase to your password?");
   //console.log(confirmLowerCase);
   if (confirmLowerCase) {
     alert(confirmLowerCase);
@@ -51,7 +55,7 @@ function getMyPasswordOptions() {
   }
 
   // confirm numeric
-  var confirmNumeric = (confirm("Would you like to add numbers to your password?"))
+  var confirmNumeric = confirm("Would you like to add numbers to your password?");
   //console.log(confirmNumeric)
   if (confirmNumeric) {
     alert(confirmNumeric);
@@ -63,7 +67,7 @@ function getMyPasswordOptions() {
 
   // confirm symbols
 
-  var confirmSymbols = (confirm("Would you like to add symbols to your password?"));
+  var confirmSymbols = confirm("Would you like to add symbols to your password?");
   //console.log(confirmSymbols)
   if (confirmSymbols) {
     alert(confirmSymbols);
@@ -74,19 +78,26 @@ function getMyPasswordOptions() {
   }
 
 
-// confirm at least one character
-var options = [confirmUpperCase, confirmLowerCase, confirmNumeric, confirmSymbols]
+  // confirm at least one character
+  var options = [confirmUpperCase, confirmLowerCase, confirmNumeric, confirmSymbols]
 
   if (options[0] || options[1] || options[2] || options[3]) {
-    alert("You picked at least one option");
+    alert("Yeah buddy! You picked at least one option");
     console.log(options)
   } else {
     alert("You need to pick at least one of the 4 options for your password.");
     return;
-}
+  }
 
 }
 
+
+// "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+// "abcdefghijklmnopqrstuvwxyz"
+// "0123456789"
+// " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+
+// 
 
 function generatePassword() {
   getMyPasswordOptions()
