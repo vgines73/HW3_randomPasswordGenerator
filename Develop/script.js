@@ -89,85 +89,89 @@ function getMyPasswordOptions() {
     alert("You need to pick at least one of the 4 options for your password.");
     return;
   }
+
+  var userpicks = [];
   // if user picks all 4 options
   if (options[0] && options[1] && options[2] && options[3]) {
     //console.log(abcCaps, abc, numbers, symbols)
-    userpicks = abcCaps.abc.numbers.symbols
+    userpicks.push(abcCaps, abc, numbers, symbols);
   }
   // if user picks 3 options
   if (options[0] && options[1] && options[2]) {
     //console.log(abcCaps, abc, numbers)
-    userpicks =abcCaps.abc.numbers
+    userpicks.push(abcCaps, abc, numbers);
   }
   if (options[0] && options[1] && options[3]) {
     //console.log(abcCaps, abc, symbols)
-    userpicks = abcCaps.abc.symbols
+    userpicks.push(abcCaps, abc, symbols);
   }
   if (options[1] && options[2] && options[3]) {
     //console.log(abc, numbers, symbols)
-    userpicks = abc.numbers.symbols
+    userpicks.push(abc, numbers, symbols);
   }
   if (options[2] && options[0] && options[3]) {
     //console.log(numbers, abcCaps, symbols)
-    userpicks = numbers.abcCaps.symbols
+    userpicks.push(numbers, abcCaps, symbols);
   }
 
   // if user picks 2 options
   if (options[0] && options[1]) {
     //console.log(abcCaps, abc)
-    userpicks = abcCaps.abc
+    userpicks.push(abcCaps, abc);
   }
   if (options[0] && options[2]) {
     //console.log(abcCaps, numbers)
-    userpicks = abcCaps.numbers
+    userpicks.push(abcCaps, numbers);
   }
   if (options[0] && options[3]) {
     //console.log(abcCaps, symbols)
-    userpicks = abcCaps.symbols
+    userpicks.push(abcCaps, symbols);
   }
   if (options[1] && options[2]) {
     //console.log(abc, numbers)
-    userpicks = abc.numbers
+    userpicks.push(abc, numbers);
   }
   if (options[1] && options[3]) {
     //console.log(abc, symbols)
-    userpicks = abc.symbols
+    userpicks.push(abc, symbols);
   }
   if (options[2] && options[3]) {
     //console.log(numbers, symbols)
-    userpicks = numbers.symbols
+    userpicks.push(numbers, symbols);
   }
 
   // if user picks 1 option
   if (options[0]) {
     //console.log(abcCaps)
-    userpicks = abcCaps
+    userpicks.push(abcCaps);
   }
   if (options[1]) {
     //console.log(abc)
-    userpicks = abc
+    userpicks.push(abc);
   }
   if (options[2]) {
     //console.log(numbers)
-    userpicks = numbers
+    userpicks.push(numbers);
   }
   if (options[3]) {
     //console.log(symbols)
-    userpicks = symbols;
+    userpicks.push(symbols);
   }
-  // for (let i = 0; i < userpicks.length; i++) {
-    // var userpicks = (Math.floor(Math.random() * userpicks.length));
-    // password.push(userpicks);
-  //}
+  
 
 }
 
 
 
 function generatePassword() {
-  getMyPasswordOptions()
+  getMyPasswordOptions() 
+    for (let i = 0; i < userpicks.length; i++) {
+    var userpicks = (Math.floor(Math.random() * userpicks.length));
+    password.push(userpicks);
+    }
+  } 
 
-}
+
 
 
 
