@@ -4,33 +4,33 @@ var abcCaps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 var abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-
+var lengths;
 
 function getMyPasswordOptions() {
   var picks = [];
   // get user input of length of password
   // make sure length is a number; not a string
-  var length = parseInt(prompt("Length of password?"));
-  console.log(length);
+  var lengths = parseInt(prompt("Length of password?"));
+  console.log(lengths);
 
   // make sure password length is not a letter
-  if (isNaN(length) === true) {
+  if (isNaN(lengths) === true) {
     alert("Password length must be a number.");
   }
 
 
   // make sure password length is at least 8 characters long; no more than 128 characters
-  if (length < 8 === true) {
+  if (lengths < 8 === true) {
     alert("Yo! That's too short! Password length must be at least 8 characters.");
     //console.log (length)
   }
 
-  if (length > 128 === true) {
+  if (lengths > 128 === true) {
     alert("Yo! That's waaaaay to long for a password. Password length must be no more than 128 characters.")
     //console.log(length)
   }
 
-  if (isNaN(length) || length < 8 || length > 128) {
+  if (isNaN(lengths) || lengths < 8 || lengths > 128) {
     return
   }
   // confirm user input on uppercase
@@ -95,67 +95,96 @@ function getMyPasswordOptions() {
   if (options[0] && options[1] && options[2] && options[3]) {
     //console.log(abcCaps, abc, numbers, symbols)
     picks.push(abcCaps, abc, numbers, symbols);
+    console.log("This is your picks: " + picks);
   }
   // if user picks 3 options
   else if (options[0] && options[1] && options[2]) {
     //console.log(abcCaps, abc, numbers)
     picks.push(abcCaps, abc, numbers);
+    console.log("This is your picks: " + picks);
+
   }
   else if (options[0] && options[1] && options[3]) {
     //console.log(abcCaps, abc, symbols)
     picks.push(abcCaps, abc, symbols);
+    console.log("This is your picks: " + picks);
+
   }
   else if (options[1] && options[2] && options[3]) {
     //console.log(abc, numbers, symbols)
     picks.push(abc, numbers, symbols);
+    console.log("This is your picks: " + picks);
+
   }
   else if (options[2] && options[0] && options[3]) {
     //console.log(numbers, abcCaps, symbols)
     picks.push(numbers, abcCaps, symbols);
+    console.log("This is your picks: " + picks);
+
   }
 
   // if user pickss 2 options
   else if (options[0] && options[1]) {
     //console.log(abcCaps, abc)
     picks.push(abcCaps, abc);
+    console.log("This is your picks: " + picks);
+
   }
   else if (options[0] && options[2]) {
     //console.log(abcCaps, numbers)
     picks.push(abcCaps, numbers);
+    console.log("This is your picks: " + picks);
+
   }
   else if (options[0] && options[3]) {
     //console.log(abcCaps, symbols)
     picks.push(abcCaps, symbols);
+    console.log("This is your picks: " + picks);
+
   }
   else if (options[1] && options[2]) {
     //console.log(abc, numbers)
     picks.push(abc, numbers);
+    console.log("This is your picks: " + picks);
+
   }
   else if (options[1] && options[3]) {
     //console.log(abc, symbols)
     picks.push(abc, symbols);
+    console.log("This is your picks: " + picks);
+
   }
   else if (options[2] && options[3]) {
     //console.log(numbers, symbols)
     picks.push(numbers, symbols);
+    console.log("This is your picks: " + picks);
+
   }
 
   // if user picks 1 option
   else if (options[0]) {
     //console.log(abcCaps)
     picks.push(abcCaps);
+    console.log("This is your pick: " + picks);
+
   }
   else if (options[1]) {
     //console.log(abc)
     picks.push(abc);
+    console.log("This is your pick: " + picks);
+
   }
   else if (options[2]) {
     //console.log(numbers)
     picks.push(numbers);
+    console.log("This is your pick: " + picks);
+
   }
   else if (options[3]) {
     //console.log(symbols)
     picks.push(symbols);
+    console.log("This is your pick: " + picks);
+
   }
   return picks
 
@@ -165,10 +194,10 @@ function getMyPasswordOptions() {
 
 function generatePassword() {
   var userpicks =getMyPasswordOptions() 
-    
-    for (let i = 0; i < userpicks.length; i++) {
+  console.log("This is your USERPICKS: " + userpicks);  
+  for (var i = 0; i < lengths; i++) {
     var userpicked = userpicks[Math.floor(Math.random() * userpicks.length)];
-    console.log(userpicked);
+    console.log("password: " + userpicked);
     }
   } 
 
