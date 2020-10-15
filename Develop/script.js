@@ -165,9 +165,10 @@ function getMyPasswordOptions() {
 
 function generatePassword() {
   getMyPasswordOptions() 
+    
     for (let i = 0; i < userpicks.length; i++) {
-    var userpicks = (Math.floor(Math.random() * userpicks.length));
-    password.push(userpicks);
+    var userpicked = userpicks[Math.floor(Math.random() * userpicks.length)];
+    console.log(userpicked);
     }
   } 
 
