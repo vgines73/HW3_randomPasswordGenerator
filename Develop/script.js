@@ -4,10 +4,10 @@ var abcCaps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 var abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-var userpicks;
+
 
 function getMyPasswordOptions() {
-
+  var picks = [];
   // get user input of length of password
   // make sure length is a number; not a string
   var length = parseInt(prompt("Length of password?"));
@@ -90,81 +90,81 @@ function getMyPasswordOptions() {
     return;
   }
 
-  var userpicks = [];
+   
   // if user picks all 4 options
   if (options[0] && options[1] && options[2] && options[3]) {
     //console.log(abcCaps, abc, numbers, symbols)
-    userpicks.push(abcCaps, abc, numbers, symbols);
+    picks.push(abcCaps, abc, numbers, symbols);
   }
   // if user picks 3 options
-  if (options[0] && options[1] && options[2]) {
+  else if (options[0] && options[1] && options[2]) {
     //console.log(abcCaps, abc, numbers)
-    userpicks.push(abcCaps, abc, numbers);
+    picks.push(abcCaps, abc, numbers);
   }
-  if (options[0] && options[1] && options[3]) {
+  else if (options[0] && options[1] && options[3]) {
     //console.log(abcCaps, abc, symbols)
-    userpicks.push(abcCaps, abc, symbols);
+    picks.push(abcCaps, abc, symbols);
   }
-  if (options[1] && options[2] && options[3]) {
+  else if (options[1] && options[2] && options[3]) {
     //console.log(abc, numbers, symbols)
-    userpicks.push(abc, numbers, symbols);
+    picks.push(abc, numbers, symbols);
   }
-  if (options[2] && options[0] && options[3]) {
+  else if (options[2] && options[0] && options[3]) {
     //console.log(numbers, abcCaps, symbols)
-    userpicks.push(numbers, abcCaps, symbols);
+    picks.push(numbers, abcCaps, symbols);
   }
 
-  // if user picks 2 options
-  if (options[0] && options[1]) {
+  // if user pickss 2 options
+  else if (options[0] && options[1]) {
     //console.log(abcCaps, abc)
-    userpicks.push(abcCaps, abc);
+    picks.push(abcCaps, abc);
   }
-  if (options[0] && options[2]) {
+  else if (options[0] && options[2]) {
     //console.log(abcCaps, numbers)
-    userpicks.push(abcCaps, numbers);
+    picks.push(abcCaps, numbers);
   }
-  if (options[0] && options[3]) {
+  else if (options[0] && options[3]) {
     //console.log(abcCaps, symbols)
-    userpicks.push(abcCaps, symbols);
+    picks.push(abcCaps, symbols);
   }
-  if (options[1] && options[2]) {
+  else if (options[1] && options[2]) {
     //console.log(abc, numbers)
-    userpicks.push(abc, numbers);
+    picks.push(abc, numbers);
   }
-  if (options[1] && options[3]) {
+  else if (options[1] && options[3]) {
     //console.log(abc, symbols)
-    userpicks.push(abc, symbols);
+    picks.push(abc, symbols);
   }
-  if (options[2] && options[3]) {
+  else if (options[2] && options[3]) {
     //console.log(numbers, symbols)
-    userpicks.push(numbers, symbols);
+    picks.push(numbers, symbols);
   }
 
   // if user picks 1 option
-  if (options[0]) {
+  else if (options[0]) {
     //console.log(abcCaps)
-    userpicks.push(abcCaps);
+    picks.push(abcCaps);
   }
-  if (options[1]) {
+  else if (options[1]) {
     //console.log(abc)
-    userpicks.push(abc);
+    picks.push(abc);
   }
-  if (options[2]) {
+  else if (options[2]) {
     //console.log(numbers)
-    userpicks.push(numbers);
+    picks.push(numbers);
   }
-  if (options[3]) {
+  else if (options[3]) {
     //console.log(symbols)
-    userpicks.push(symbols);
+    picks.push(symbols);
   }
-  
+  return picks
 
 }
 
 
 
 function generatePassword() {
-  getMyPasswordOptions() 
+  var userpicks =getMyPasswordOptions() 
     
     for (let i = 0; i < userpicks.length; i++) {
     var userpicked = userpicks[Math.floor(Math.random() * userpicks.length)];
