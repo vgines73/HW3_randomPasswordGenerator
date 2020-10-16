@@ -33,7 +33,6 @@ function getMyPasswordOptions() {
   }
 
   // confirm user input on uppercase
-
   var confirmUpperCase = confirm("Would you like to add uppercase to your password?");
   if (confirmUpperCase) {
     alert(confirmUpperCase);
@@ -58,7 +57,6 @@ function getMyPasswordOptions() {
   }
 
   // confirm symbols
-
   var confirmSymbols = confirm("Would you like to add symbols to your password?");
   if (confirmSymbols) {
     alert(confirmSymbols);
