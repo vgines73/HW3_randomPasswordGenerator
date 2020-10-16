@@ -41,4 +41,5 @@ CONDITIONS THAT NEED TO BE MET:
 
 ![link] https://vgines73.github.io/HW3_randomPasswordGenerator/
 
-![image] 
+![screencapture-vgines73-github-io-HW3-randomPasswordGenerator-2020-10-16-14_23_09](https://user-images.githubusercontent.com/71681031/96311344-1b3b3500-0fbe-11eb-9224-30f4c46f9066.png)
+
