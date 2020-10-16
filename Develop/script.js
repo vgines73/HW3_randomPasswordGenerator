@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var abcCaps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"];
+var abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 var lengths;
@@ -10,8 +10,8 @@ function getMyPasswordOptions() {
   var picks = [];
   // get user input of length of password
   // make sure length is a number; not a string
-  var lengths = parseInt(prompt("Length of password?"));
-  console.log(lengths);
+  lengths = parseInt(prompt("Length of password?"));
+  ///console.log(lengths);
 
   // make sure password length is not a letter
   if (isNaN(lengths) === true) {
@@ -39,20 +39,20 @@ function getMyPasswordOptions() {
   //console.log(confirmUpperCase)
   if (confirmUpperCase) {
     alert(confirmUpperCase);
-    console.log(confirmUpperCase)
+    ///console.log(confirmUpperCase)
   } else {
     alert("That's on you's!");
-    console.log(confirmUpperCase)
+    ///console.log(confirmUpperCase)
   }
 
   var confirmLowerCase = confirm("Would you like to add lowercase to your password?");
   //console.log(confirmLowerCase);
   if (confirmLowerCase) {
     alert(confirmLowerCase);
-    console.log(confirmLowerCase)
+    ///console.log(confirmLowerCase)
   } else {
     alert("That's on you's!");
-    console.log(confirmLowerCase)
+    ///console.log(confirmLowerCase)
   }
 
   // confirm numeric
@@ -60,10 +60,10 @@ function getMyPasswordOptions() {
   //console.log(confirmNumeric)
   if (confirmNumeric) {
     alert(confirmNumeric);
-    console.log(confirmNumeric)
+    ///console.log(confirmNumeric)
   } else {
     alert("That's on you's!");
-    console.log(confirmNumeric)
+    ///console.log(confirmNumeric)
   }
 
   // confirm symbols
@@ -72,16 +72,30 @@ function getMyPasswordOptions() {
   //console.log(confirmSymbols)
   if (confirmSymbols) {
     alert(confirmSymbols);
-    console.log(confirmSymbols)
+    ///console.log(confirmSymbols)
   } else {
     alert("That's on you's!");
-    console.log(confirmSymbols)
+    ///console.log(confirmSymbols)
   }
 
 
-  // confirm at least one character
+  // confirm an option and push it
   var options = [confirmUpperCase, confirmLowerCase, confirmNumeric, confirmSymbols]
 
+  if (options[0]) {
+    picks.push.apply(picks, abcCaps)
+  }
+  if (options[1]) {
+    picks.push.apply(picks, abc)
+  }
+  if (options[2]) {
+    picks.push.apply(picks, numbers)
+  }
+  if (options[3]) {
+    picks.push.apply(picks, symbols)
+  }
+
+  /*
   if (options[0] || options[1] || options[2] || options[3]) {
     alert("Yeah buddy! You picked at least one option");
     console.log(options)
@@ -94,31 +108,31 @@ function getMyPasswordOptions() {
   // if user picks all 4 options
   if (options[0] && options[1] && options[2] && options[3]) {
     //console.log(abcCaps, abc, numbers, symbols)
-    picks.push(abcCaps, abc, numbers, symbols);
+    picks.concat(abcCaps, abc, numbers, symbols);
     console.log("This is your picks: " + picks);
   }
   // if user picks 3 options
   else if (options[0] && options[1] && options[2]) {
     //console.log(abcCaps, abc, numbers)
-    picks.push(abcCaps, abc, numbers);
+    picks.concat(abcCaps, abc, numbers);
     console.log("This is your picks: " + picks);
 
   }
   else if (options[0] && options[1] && options[3]) {
     //console.log(abcCaps, abc, symbols)
-    picks.push(abcCaps, abc, symbols);
+    picks.concat(abcCaps, abc, symbols);
     console.log("This is your picks: " + picks);
 
   }
   else if (options[1] && options[2] && options[3]) {
     //console.log(abc, numbers, symbols)
-    picks.push(abc, numbers, symbols);
+    picks.concat(abc, numbers, symbols);
     console.log("This is your picks: " + picks);
 
   }
   else if (options[2] && options[0] && options[3]) {
     //console.log(numbers, abcCaps, symbols)
-    picks.push(numbers, abcCaps, symbols);
+    picks.concat(numbers, abcCaps, symbols);
     console.log("This is your picks: " + picks);
 
   }
@@ -126,37 +140,37 @@ function getMyPasswordOptions() {
   // if user pickss 2 options
   else if (options[0] && options[1]) {
     //console.log(abcCaps, abc)
-    picks.push(abcCaps, abc);
+    picks.concat(abcCaps, abc);
     console.log("This is your picks: " + picks);
 
   }
   else if (options[0] && options[2]) {
     //console.log(abcCaps, numbers)
-    picks.push(abcCaps, numbers);
+    picks.concat(abcCaps, numbers);
     console.log("This is your picks: " + picks);
 
   }
   else if (options[0] && options[3]) {
     //console.log(abcCaps, symbols)
-    picks.push(abcCaps, symbols);
+    picks.concat(abcCaps, symbols);
     console.log("This is your picks: " + picks);
 
   }
   else if (options[1] && options[2]) {
     //console.log(abc, numbers)
-    picks.push(abc, numbers);
+    picks.concat(abc, numbers);
     console.log("This is your picks: " + picks);
 
   }
   else if (options[1] && options[3]) {
     //console.log(abc, symbols)
-    picks.push(abc, symbols);
+    picks.concat(abc, symbols);
     console.log("This is your picks: " + picks);
 
   }
   else if (options[2] && options[3]) {
     //console.log(numbers, symbols)
-    picks.push(numbers, symbols);
+    picks.concat(numbers, symbols);
     console.log("This is your picks: " + picks);
 
   }
@@ -164,41 +178,50 @@ function getMyPasswordOptions() {
   // if user picks 1 option
   else if (options[0]) {
     //console.log(abcCaps)
-    picks.push(abcCaps);
+    picks.concat(abcCaps);
     console.log("This is your pick: " + picks);
 
   }
   else if (options[1]) {
     //console.log(abc)
-    picks.push(abc);
+    picks.concat(abc);
     console.log("This is your pick: " + picks);
 
   }
   else if (options[2]) {
     //console.log(numbers)
-    picks.push(numbers);
+    picks.concat(numbers);
     console.log("This is your pick: " + picks);
 
   }
   else if (options[3]) {
     //console.log(symbols)
-    picks.push(symbols);
+    picks.concat(symbols);
     console.log("This is your pick: " + picks);
 
   }
-  return picks
+  //*/
+ //console.log(picks)
+  return picks;
 
 }
 
 
 
 function generatePassword() {
-  var userpicks =getMyPasswordOptions() 
-  console.log("This is your USERPICKS: " + userpicks);  
+  var result = [];
+  var userpicks = getMyPasswordOptions() 
+  ///console.log("This is your USERPICKS: " + userpicks.length);  
   for (var i = 0; i < lengths; i++) {
     var userpicked = userpicks[Math.floor(Math.random() * userpicks.length)];
-    console.log("password: " + userpicked);
+    
+    //password.concat(userpicked);
+    ///console.log("password: " + userpicked);
+    result.push(userpicked)
+   // return userpicked
     }
+    return result.join("");
+    
   } 
 
 
@@ -212,9 +235,10 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  
 
   passwordText.value = password;
 
@@ -222,3 +246,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+ 
