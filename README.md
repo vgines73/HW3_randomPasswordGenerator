@@ -47,10 +47,10 @@ To create a random password generator based on selection of characters the user 
 
 
             
-**Repo Link**
+**Repo Link:**
 https://github.com/vgines73/HW3_randomPasswordGenerator
 
-**Live Link**
+**Live Link:**
 https://vgines73.github.io/HW3_randomPasswordGenerator/
 
 **Demo**
@@ -64,6 +64,11 @@ https://drive.google.com/file/d/10MTFj6vM56yUHrumHu9C6zJv1KzzJH4p/view
 **Sreenshot 2**
 ![screencapture-vgines73-github-io-HW3-randomPasswordGenerator-2020-10-17-13_47_21](https://user-images.githubusercontent.com/71681031/96353289-6a956a00-107f-11eb-83f6-12dd9dcecf68.png)
 
-
 - - - 
+**Contact Info:**
+
+Email: vgines73@gmail.com
+
+<img src="https://img.shields.io/badge/LICENSE-mit-green">
+
 © 2020 Vincent Gines. All Rights Reserved. OH YEAH!
